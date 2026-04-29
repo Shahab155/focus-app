@@ -1,10 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 
 export function HeroSection() {
 
-  let image = "/hero/1.jpeg"
 
 
   return (
@@ -75,15 +73,73 @@ export function HeroSection() {
                 </div>
 
                 {/* Real Dashboard Screenshot */}
-                <div className="relative aspect-[16/10] w-full ">
-                  <Image
-                    src={"/hero/1.jpeg"}
-                    alt="Focus App Dashboard"
-                    width={1024}
-                    height={576}
-                    className="h-full w-full object-cover absolute"
-                    unoptimized  // ← add this
-                  />
+                {/* Interactive Dashboard Mockup */}
+                <div className="relative aspect-[16/10] w-full bg-[#0c0f1a] p-3 md:p-6 overflow-hidden">
+                  <div className="flex gap-4 h-full">
+                    {/* Mock Sidebar */}
+                    <div className="w-12 md:w-16 flex flex-col gap-4 items-center py-2 border-r border-white/5 h-full shrink-0">
+                      {[1, 2, 3, 4].map((i) => (
+                        <div key={i} className={`w-8 h-8 rounded-lg ${i === 1 ? 'bg-primary/20 border border-primary/30' : 'bg-white/5'} flex items-center justify-center`}>
+                          <div className={`w-3 h-3 rounded-sm ${i === 1 ? 'bg-primary' : 'bg-white/20'}`} />
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Mock Main Content */}
+                    <div className="flex-1 flex flex-col gap-4 overflow-hidden">
+                      {/* Header */}
+                      <div className="flex justify-between items-center">
+                        <div className="space-y-1">
+                          <div className="h-4 w-32 bg-white/10 rounded-full" />
+                          <div className="h-2 w-20 bg-white/5 rounded-full" />
+                        </div>
+                        <div className="w-8 h-8 rounded-full bg-white/10 border border-white/10" />
+                      </div>
+
+                      {/* Daily Progress */}
+                      <div className="p-4 rounded-xl border border-white/5 bg-white/[0.02] space-y-3">
+                        <div className="flex justify-between items-center">
+                          <div className="h-2 w-24 bg-white/10 rounded-full" />
+                          <div className="h-2 w-8 bg-primary/40 rounded-full" />
+                        </div>
+                        <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                          <div className="h-full w-[65%] bg-gradient-to-r from-primary to-secondary animate-pulse" />
+                        </div>
+                      </div>
+
+                      {/* Goals Grid */}
+                      <div className="grid grid-cols-2 gap-3">
+                        {[1, 2].map((i) => (
+                          <div key={i} className="p-3 rounded-xl border border-white/5 bg-white/[0.02] space-y-3">
+                            <div className="flex gap-2 items-center">
+                              <div className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-primary' : 'bg-secondary'}`} />
+                              <div className="h-2 w-16 bg-white/10 rounded-full" />
+                            </div>
+                            <div className="space-y-1.5">
+                              <div className="h-1.5 w-full bg-white/5 rounded-full" />
+                              <div className="h-1.5 w-[80%] bg-white/5 rounded-full" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Avoid List Preview */}
+                      <div className="flex-1 p-3 rounded-xl border border-white/5 bg-white/[0.02] space-y-3">
+                         <div className="h-2 w-20 bg-amber-500/20 rounded-full" />
+                         <div className="space-y-2">
+                           {[1, 2, 3].map((i) => (
+                             <div key={i} className="flex gap-2 items-center">
+                               <div className="w-1.5 h-1.5 rounded-full bg-amber-500/40" />
+                               <div className={`h-1.5 rounded-full bg-white/5 ${i === 1 ? 'w-24' : i === 2 ? 'w-32' : 'w-16'}`} />
+                             </div>
+                           ))}
+                         </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Ambient Glows Inside Mockup */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-primary/5 blur-[100px] pointer-events-none" />
                 </div>
               </div>
 
