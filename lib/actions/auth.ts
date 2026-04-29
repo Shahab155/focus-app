@@ -6,6 +6,7 @@ import { signIn } from "@/auth";
 import { AuthError } from "next-auth";
 
 export async function signUp(prevState: any, formData: FormData) {
+  const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
   const confirmPassword = formData.get("confirmPassword") as string;
@@ -30,8 +31,8 @@ export async function signUp(prevState: any, formData: FormData) {
 
     // Create user
     await sql`
-      INSERT INTO users (email, password)
-      VALUES (${email}, ${hashedPassword})
+      INSERT INTO users (name, email, password)
+      VALUES (${name}, ${email}, ${hashedPassword})
     `;
 
     // Sign in

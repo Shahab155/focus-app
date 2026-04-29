@@ -22,8 +22,20 @@ export default function SignupPage() {
             <p className="text-text-secondary font-medium text-base">Start your journey today</p>
           </div>
 
-          <form action={formAction} className="space-y-6">
-            <div className="space-y-3">
+          <form action={formAction} className="space-y-4">
+            <div className="space-y-2">
+              <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
+                Full Name
+              </label>
+              <input
+                name="name"
+                type="text"
+                required
+                className="w-full h-12 px-6 bg-bg-main border border-border-subtle rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none text-text-primary placeholder:text-gray-700 font-bold tracking-tight shadow-inner"
+                placeholder="John Doe"
+              />
+            </div>
+            <div className="space-y-2">
               <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Email Address
               </label>
@@ -35,7 +47,7 @@ export default function SignupPage() {
                 placeholder="name@company.com"
               />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2">
               <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Password
               </label>
@@ -47,7 +59,7 @@ export default function SignupPage() {
                 placeholder="••••••••"
               />
             </div>
-            <div className="space-y-3">
+            <div className="space-y-2">
               <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Confirm Password
               </label>
