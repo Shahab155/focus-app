@@ -29,11 +29,11 @@ export default async function DashboardPage() {
 
   return (
     <div className="relative">
-      <header className="mb-10 flex flex-col gap-1 relative z-10">
-        <h1 className="text-[36px] font-extrabold tracking-tight text-white font-heading leading-tight">
+      <header className="mb-6 md:mb-10 flex flex-col gap-1 relative z-10">
+        <h1 className="text-[28px] md:text-[36px] font-extrabold tracking-tight text-white font-heading leading-tight">
           Hello, {session?.user?.name || session?.user?.email?.split('@')[0] || 'User'}
         </h1>
-        <p className="text-[12px] font-medium tracking-[0.1em] uppercase text-[#6b7280] font-sans">
+        <p className="text-[10px] md:text-[12px] font-medium tracking-[0.1em] uppercase text-[#6b7280] font-sans">
           {currentDate}
         </p>
       </header>

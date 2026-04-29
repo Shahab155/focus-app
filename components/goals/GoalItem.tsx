@@ -78,18 +78,18 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
   }
 
   return (
-    <div className="group p-[28px] bg-[#111827] border border-white/6 rounded-[16px] shadow-sm hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 relative overflow-hidden">
+    <div className="group p-5 md:p-7 bg-[#111827] border border-white/6 rounded-[16px] shadow-sm hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 relative overflow-hidden">
       {/* Subtle hover gradient */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
 
       <div className="flex justify-between items-start relative z-10">
         <div>
-          <h4 className="text-[20px] font-semibold text-white font-heading tracking-tight leading-tight">{goal.title}</h4>
+          <h4 className="text-lg md:text-[20px] font-semibold text-white font-heading tracking-tight leading-tight">{goal.title}</h4>
           {goal.description && (
-            <p className="text-[14px] text-text-secondary mt-2 leading-relaxed font-medium">{goal.description}</p>
+            <p className="text-[13px] md:text-[14px] text-text-secondary mt-2 leading-relaxed font-medium">{goal.description}</p>
           )}
         </div>
-        <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300">
+        <div className="flex gap-1 lg:opacity-0 group-hover:opacity-100 transition-all duration-300">
 
           <button
             onClick={() => setIsEditing(true)}

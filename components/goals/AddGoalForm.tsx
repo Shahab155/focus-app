@@ -29,7 +29,7 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
     return (
       <button
         onClick={() => setShowForm(true)}
-        className="w-full py-6 border-2 border-dashed border-border-subtle rounded-[2rem] text-text-secondary font-bold hover:border-primary/50 hover:text-text-primary transition-all group flex flex-col items-center gap-3"
+        className="w-full py-5 md:py-6 border-2 border-dashed border-border-subtle rounded-[1.5rem] md:rounded-[2rem] text-text-secondary font-bold hover:border-primary/50 hover:text-text-primary transition-all group flex flex-col items-center gap-3"
       >
         <div className="w-10 h-10 rounded-full bg-bg-card flex items-center justify-center border border-border-subtle group-hover:bg-primary/10 group-hover:border-primary/30 transition-all">
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,14 +43,14 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
 
   if (disabled) {
     return (
-      <div className="p-6 bg-bg-card border border-border-subtle rounded-[2rem] text-text-secondary text-sm italic text-center">
+      <div className="p-5 md:p-6 bg-bg-card border border-border-subtle rounded-[1.5rem] md:rounded-[2rem] text-text-secondary text-sm italic text-center">
         Limit of 3 goals reached. Focus is about elimination.
       </div>
     );
   }
 
   return (
-    <form id="add-goal-form" action={action} className="space-y-5 bg-bg-sidebar p-6 rounded-[2rem] border border-border-subtle shadow-xl">
+    <form id="add-goal-form" action={action} className="space-y-5 bg-bg-sidebar p-5 md:p-6 rounded-[1.5rem] md:rounded-[2rem] border border-border-subtle shadow-xl">
       <div className="space-y-4">
         <div className="space-y-3">
           <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">Focus Goal Title</label>

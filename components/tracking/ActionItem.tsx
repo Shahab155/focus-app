@@ -82,7 +82,7 @@ export function ActionItem({ action }: ActionItemProps) {
           </button>
           
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 flex-1">
-            <span className={`text-[15px] font-medium font-sans transition-colors ${isCompleted ? "text-[#6b7280] line-through decoration-[#6b7280]" : "text-[#d1d5db]"}`}>
+            <span className={`text-[14px] md:text-[15px] font-medium font-sans transition-colors ${isCompleted ? "text-[#6b7280] line-through decoration-[#6b7280]" : "text-[#d1d5db]"}`}>
               {action.name}
             </span>
             {action.streak > 0 && (
@@ -109,7 +109,7 @@ export function ActionItem({ action }: ActionItemProps) {
 
           <button 
             onClick={handleDelete}
-            className="opacity-0 group-hover:opacity-100 p-1 text-text-secondary hover:text-warning transition-opacity"
+            className="lg:opacity-0 group-hover:opacity-100 p-1 text-text-secondary hover:text-warning transition-opacity"
           >
             <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

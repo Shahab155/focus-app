@@ -58,7 +58,7 @@ export function AvoidItem({ item }: AvoidItemProps) {
 
       <button 
         onClick={handleDelete}
-        className="opacity-0 group-hover:opacity-100 p-1 text-[#6b7280] hover:text-[#ef4444] transition-opacity"
+        className="lg:opacity-0 group-hover:opacity-100 p-1 text-[#6b7280] hover:text-[#ef4444] transition-opacity"
       >
         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

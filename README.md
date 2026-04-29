@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Focus - Master Your Goals ⚡
 
-## Getting Started
+Focus is a premium, high-performance productivity system designed for high-achievers. It combines a minimalist aesthetic with powerful psychological principles to help you eliminate distractions and crush your most important goals.
 
-First, run the development server:
+## 🚀 Key Features
 
+### 1. Top 3 Focus System
+Instead of endless to-do lists, Focus forces you to prioritize. Define your top 3 goals and track daily measurable actions to build consistent momentum.
+
+### 2. AI-Powered Voice Journaling
+Reflect on your day using our premium voice-to-text journaling system.
+- Supports **English, Urdu, and Arabic**.
+- Real-time speech visualization.
+- Auto-save drafts to prevent data loss.
+
+### 3. The "Avoid" List
+Distraction management is as important as goal tracking. Log things you need to avoid each day (e.g., "Social Media Scrolling", "Deep Work Distractions") and track your consistency.
+
+### 4. Weekly Progress Reports
+Automated weekly reviews that aggregate your daily performance. See your "Overall Score" and performance breakdowns for every goal over the last 7 days.
+
+### 5. Premium Dark Aesthetics
+A state-of-the-art UI featuring:
+- **Glassmorphism** cards and navigation.
+- **Ambient glows** and smooth gradients.
+- **Micro-animations** for a responsive, "alive" feel.
+- Fully **responsive design** for Desktop and Mobile.
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 14+](https://nextjs.org/) (App Router)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Database**: [Neon PostgreSQL](https://neon.tech/) (Serverless)
+- **Authentication**: [Auth.js v5](https://authjs.dev/)
+- **State Management**: React Server Actions & Hooks
+
+## 🏁 Getting Started
+
+### 1. Prerequisites
+- Node.js 18.17+
+- A Neon Database account (PostgreSQL)
+
+### 2. Installation
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/your-username/focus-app.git
+
+# Install dependencies
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Environment Variables
+Create a `.env.local` file in the root directory:
+```env
+DATABASE_URL=your_neon_postgresql_url
+AUTH_SECRET=your_auth_secret
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Running Locally
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📁 Project Structure
 
-## Learn More
+- `/app`: Next.js pages, layouts, and API routes.
+- `/components`: Reusable UI components (Landing, Dashboard, Tracking, etc.).
+- `/lib`: Utility functions, database schemas, and Server Actions.
+- `/public`: Static assets (Icons, Hero images).
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with precision by **Antigravity AI**.
