@@ -50,10 +50,10 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
   }
 
   return (
-    <form id="add-goal-form" action={action} className="space-y-5 bg-gray-900 p-6 rounded-[2rem] border border-gray-800 shadow-xl">
+    <form id="add-goal-form" action={action} className="space-y-5 bg-bg-sidebar p-6 rounded-[2rem] border border-border-subtle shadow-xl">
       <div className="space-y-4">
         <div className="space-y-3">
-          <label className="block text-xs uppercase font-bold text-text-secondary ml-1">Focus Goal Title</label>
+          <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">Focus Goal Title</label>
           <input
             name="title"
             placeholder="e.g. Master React Performance"
@@ -62,7 +62,7 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
           />
         </div>
         <div className="space-y-3">
-          <label className="block text-xs uppercase font-bold text-text-secondary ml-1">Context / Why?</label>
+          <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">Context / Why?</label>
           <textarea
             name="description"
             placeholder="Why is this important now?"
@@ -72,8 +72,8 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
         </div>
         
         {error && (
-          <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl">
-            <p className="text-red-400 text-xs font-bold text-center">{error}</p>
+          <div className="p-3 bg-warning/10 border border-warning/20 rounded-xl">
+            <p className="text-warning text-xs font-bold text-center">{error}</p>
           </div>
         )}
 
@@ -81,7 +81,7 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
           <button
             type="button"
             onClick={() => setShowForm(false)}
-            className="text-xs uppercase font-bold text-text-secondary hover:text-text-primary transition-colors"
+            className="text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary hover:text-text-primary transition-colors"
           >
             Cancel
           </button>

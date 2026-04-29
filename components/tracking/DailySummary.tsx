@@ -30,7 +30,7 @@ export function DailySummary({ progress }: DailySummaryProps) {
       <div className="relative z-10">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
           <div className="flex flex-col gap-2">
-            <h2 className="text-[10px] uppercase font-bold text-secondary tracking-[0.4em] ml-2 opacity-80">Overall Score</h2>
+            <h2 className="text-[11px] font-medium tracking-[0.08em] uppercase text-secondary ml-2 opacity-80">Overall Score</h2>
             <div className="flex items-center gap-6">
               <span className="text-9xl font-bold text-secondary tracking-tighter drop-shadow-[0_0_30px_rgba(16,185,129,0.4)] animate-pulse-subtle">
                 {averagePercentage}%
@@ -38,7 +38,7 @@ export function DailySummary({ progress }: DailySummaryProps) {
               <div className="h-20 w-px bg-secondary/20 hidden md:block" />
               <div className="flex flex-col">
                 <span className="text-text-primary font-bold uppercase text-[10px] tracking-[0.3em] mb-1">Daily</span>
-                <span className="text-text-secondary font-bold uppercase text-[10px] tracking-[0.3em]">Performance</span>
+                <span className="text-[11px] font-medium tracking-[0.08em] uppercase text-text-secondary">Performance</span>
               </div>
             </div>
           </div>

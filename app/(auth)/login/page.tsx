@@ -23,13 +23,13 @@ export default function LoginPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
               </svg>
             </div>
-            <h1 className="text-4xl font-bold text-gray-50 tracking-tight mb-4 leading-tight">Welcome Back</h1>
+            <h1 className="text-[28px] md:text-[36px] font-bold text-text-heading tracking-tight mb-4 leading-tight">Welcome Back</h1>
             <p className="text-text-secondary font-medium text-base">Sign in to your account to continue</p>
           </div>
 
           <form action={formAction} className="space-y-6">
             <div className="space-y-3">
-              <label className="block text-xs uppercase font-bold text-text-secondary ml-1">
+              <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Email Address
               </label>
               <input
@@ -41,7 +41,7 @@ export default function LoginPage() {
               />
             </div>
             <div className="space-y-3">
-              <label className="block text-xs uppercase font-bold text-text-secondary ml-1">
+              <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Password
               </label>
               <input
@@ -54,15 +54,15 @@ export default function LoginPage() {
             </div>
 
             {state?.error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl">
-                <p className="text-red-400 text-sm font-bold text-center">{state.error}</p>
+              <div className="p-4 bg-warning/10 border border-warning/20 rounded-2xl">
+                <p className="text-warning text-sm font-bold text-center">{state.error}</p>
               </div>
             )}
 
             <button
               type="submit"
               disabled={isPending}
-              className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98] disabled:opacity-50 mt-4 uppercase text-[10px]"
+              className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98] disabled:opacity-50 mt-4 uppercase text-[12px] tracking-[0.08em] font-medium"
             >
               {isPending ? "Signing in..." : "Sign In"}
             </button>
@@ -72,7 +72,7 @@ export default function LoginPage() {
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-border-subtle/50"></div>
             </div>
-            <div className="relative flex justify-center text-[10px] uppercase font-bold">
+            <div className="relative flex justify-center text-[11px] font-medium tracking-[0.08em] uppercase">
               <span className="px-6 bg-bg-card/0 text-text-secondary backdrop-blur-sm">Or continue with</span>
             </div>
           </div>

@@ -42,14 +42,14 @@ export function Sidebar() {
   return (
     <>
       {/* Mobile Nav Header */}
-      <div className="lg:hidden flex items-center justify-between p-4 border-b border-gray-800 bg-gray-900 sticky top-0 z-40">
+      <div className="lg:hidden flex items-center justify-between p-4 border-b border-border-subtle bg-[#0c0f1a] sticky top-0 z-40">
         <div className="flex items-center gap-2 font-bold text-gray-50 tracking-tighter">
-          <div className="w-6 h-6 bg-primary rounded flex items-center justify-center shadow-[0_0_15px_rgba(99,102,241,0.5)]">
+          <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          Focus
+          <span className="font-heading">Focus</span>
         </div>
         <button 
           onClick={() => setIsOpen(!isOpen)}
@@ -75,20 +75,19 @@ export function Sidebar() {
 
       {/* Sidebar Content */}
       <aside className={`
-        fixed lg:sticky top-0 left-0 z-50 h-screen w-64 bg-bg-main border-r border-border-subtle transition-transform duration-300 ease-in-out flex flex-col
+        fixed lg:sticky top-0 left-0 z-50 h-screen w-[260px] bg-[#0c0f1a] border-r border-white/5 transition-transform duration-300 ease-in-out flex flex-col
         ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
-        <div className="p-8 hidden lg:flex items-center gap-3 font-bold text-2xl text-gray-50 tracking-tighter">
-          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.6)] group/logo">
-            <svg className="w-6 h-6 text-white group-hover/logo:scale-110 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="p-6 hidden lg:flex items-center gap-3">
+          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-[0_0_20px_rgba(99,102,241,0.4)]">
+            <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-white/60">Focus</span>
+          <span className="text-[20px] font-bold text-white font-heading">Focus</span>
         </div>
 
-        <div className="flex-1 overflow-y-auto py-4 px-3 flex flex-col gap-1">
-          <div className="px-3 mb-2 text-xs font-semibold uppercase text-text-secondary">Menu</div>
+        <div className="flex-1 overflow-y-auto py-6 px-4 flex flex-col gap-1.5">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -96,16 +95,13 @@ export function Sidebar() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`flex items-center gap-3 px-6 py-4 rounded-xl text-sm font-bold transition-all relative overflow-hidden group ${
+                className={`flex items-center gap-3 px-4 py-2.5 rounded-[8px] text-[14px] font-medium font-sans transition-all duration-200 group ${
                   isActive 
-                    ? "bg-primary/10 text-primary" 
-                    : "text-text-secondary hover:bg-bg-card hover:text-text-primary"
+                    ? "bg-indigo-500/15 text-[#818cf8] border-l-[3px] border-[#6366f1] rounded-l-none" 
+                    : "text-text-secondary hover:bg-white/4 hover:text-text-primary"
                 }`}
               >
-                {isActive && (
-                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-primary rounded-r-full shadow-[0_0_15px_rgba(99,102,241,0.8)]" />
-                )}
-                <span className={`transition-transform duration-300 ${isActive ? "scale-110" : "group-hover:scale-110"}`}>
+                <span className={`transition-transform duration-300 ${isActive ? "text-[#818cf8]" : "group-hover:text-text-primary"}`}>
                   {item.icon}
                 </span>
                 {item.name}
@@ -114,12 +110,12 @@ export function Sidebar() {
           })}
         </div>
 
-        <div className="p-4 border-t border-gray-800">
+        <div className="p-4 border-t border-white/5">
           <button
             onClick={() => signOut({ callbackUrl: "/" })}
-            className="flex items-center gap-3 px-4 py-3 w-full rounded-xl text-sm font-bold text-text-secondary hover:bg-red-500/10 hover:text-red-500 transition-all group"
+            className="flex items-center gap-3 px-4 py-2.5 w-full rounded-[8px] text-[14px] font-medium font-sans text-[#6b7280] hover:bg-red-500/10 hover:text-[#ef4444] transition-all group"
           >
-            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-5 h-5 transition-transform group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
             Sign Out
@@ -129,3 +125,4 @@ export function Sidebar() {
     </>
   );
 }
+

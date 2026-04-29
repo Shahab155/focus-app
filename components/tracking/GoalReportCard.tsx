@@ -27,7 +27,7 @@ export function GoalReportCard({ goal }: GoalReportCardProps) {
       <div className="space-y-6 relative z-10">
         <div className="space-y-4">
           <div className="flex justify-between items-baseline">
-            <span className="text-xs uppercase font-bold text-text-secondary">Weekly Average</span>
+            <span className="text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary">Weekly Average</span>
             <span className="text-4xl font-bold text-secondary tracking-tighter">{goal.avg_progress}%</span>
           </div>
           <div className="w-full bg-bg-main h-3 rounded-full overflow-hidden shadow-inner border border-border-subtle/50">
@@ -40,7 +40,7 @@ export function GoalReportCard({ goal }: GoalReportCardProps) {
 
         <div className="flex items-center justify-between pt-6 border-t border-border-subtle/50">
           <div>
-            <span className="text-[10px] uppercase font-bold text-text-secondary block mb-2">Total Impact</span>
+            <span className="text-[11px] font-medium tracking-[0.08em] uppercase text-text-secondary block mb-2">Total Impact</span>
             <div className="flex items-baseline gap-2">
               <span className="text-3xl font-bold text-text-primary tracking-tight">{goal.total_completed}</span>
               <span className="text-xs text-text-secondary font-bold uppercase">units</span>
@@ -49,7 +49,7 @@ export function GoalReportCard({ goal }: GoalReportCardProps) {
           
           <button 
             onClick={() => setIsExpanded(!isExpanded)}
-            className="text-[10px] uppercase font-bold text-gray-50 hover:underline underline-offset-4"
+            className="text-[11px] font-medium tracking-[0.08em] uppercase text-gray-50 hover:underline underline-offset-4"
           >
             {isExpanded ? "Hide Breakdown" : "View Breakdown"}
           </button>

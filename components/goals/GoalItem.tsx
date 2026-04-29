@@ -39,7 +39,7 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
       <form action={handleUpdate} className="p-10 bg-bg-card border border-border-subtle rounded-[2.5rem] space-y-6 shadow-2xl relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
         <div className="space-y-3 relative z-10">
-          <label className="block text-[10px] uppercase font-bold text-text-secondary tracking-widest ml-1 opacity-70">Focus Goal Title</label>
+          <label className="block text-[11px] font-medium tracking-[0.08em] uppercase text-text-secondary opacity-70">Focus Goal Title</label>
           <input
             name="title"
             defaultValue={goal.title}
@@ -49,7 +49,7 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
           />
         </div>
         <div className="space-y-3 relative z-10">
-          <label className="block text-[10px] uppercase font-bold text-text-secondary tracking-widest ml-1 opacity-70">Context / Motivation</label>
+          <label className="block text-[11px] font-medium tracking-[0.08em] uppercase text-text-secondary opacity-70">Context / Motivation</label>
           <textarea
             name="description"
             defaultValue={goal.description || ""}
@@ -61,7 +61,7 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
           <button
             type="button"
             onClick={() => setIsEditing(false)}
-            className="text-[10px] uppercase font-bold text-text-secondary hover:text-text-primary transition-colors tracking-widest"
+            className="text-[11px] font-medium tracking-[0.08em] uppercase text-text-secondary hover:text-text-primary transition-colors"
           >
             Cancel
           </button>
@@ -78,18 +78,19 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
   }
 
   return (
-    <div className="group p-8 md:p-10 bg-bg-card/50 backdrop-blur-sm border border-border-subtle rounded-[2.5rem] shadow-sm hover:shadow-primary/5 hover:border-primary/30 hover:-translate-y-1 transition-all duration-500 relative overflow-hidden">
+    <div className="group p-[28px] bg-[#111827] border border-white/6 rounded-[16px] shadow-sm hover:shadow-primary/5 hover:border-primary/30 transition-all duration-500 relative overflow-hidden">
       {/* Subtle hover gradient */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/10 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none" />
 
       <div className="flex justify-between items-start relative z-10">
         <div>
-          <h4 className="text-2xl font-bold text-gray-50 group-hover:text-primary transition-colors tracking-tight leading-tight">{goal.title}</h4>
+          <h4 className="text-[20px] font-semibold text-white font-heading tracking-tight leading-tight">{goal.title}</h4>
           {goal.description && (
-            <p className="text-base text-text-secondary mt-3 leading-relaxed font-medium">{goal.description}</p>
+            <p className="text-[14px] text-text-secondary mt-2 leading-relaxed font-medium">{goal.description}</p>
           )}
         </div>
-        <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0">
+        <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-all duration-300">
+
           <button
             onClick={() => setIsEditing(true)}
             className="p-2.5 text-text-secondary hover:text-primary hover:bg-primary/10 rounded-xl transition-all"
@@ -102,7 +103,7 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
           <button
             onClick={handleDelete}
             disabled={isPending}
-            className="p-1.5 text-text-secondary hover:text-red-500 rounded-lg transition-colors"
+            className="p-1.5 text-text-secondary hover:text-warning rounded-lg transition-colors"
             title="Delete"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -113,7 +114,7 @@ export function GoalItem({ goal, actions }: GoalItemProps) {
       </div>
 
       {/* Daily Tracking Section */}
-      <div className="mt-6 pt-5 border-t border-gray-800/80 relative z-10">
+      <div className="mt-6 pt-5 border-t border-border-subtle relative z-10">
         <div className="space-y-1 mb-4">
           {actions.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-10 border border-dashed border-border-subtle rounded-2xl bg-bg-main/30 group/empty">

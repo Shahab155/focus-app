@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 
 export function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full bg-[#0B0F19]/80 backdrop-blur-xl border-b border-gray-800/50">
+    <nav className="sticky top-0 z-50 w-full bg-bg-main/80 backdrop-blur-xl border-2 border-border-subtle/100">
       <Container>
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center gap-3 group">
@@ -16,12 +16,7 @@ export function Navbar() {
           </Link>
           
           <div className="flex items-center gap-8">
-            <Link 
-              href="/login" 
-              className="text-sm font-bold text-text-secondary hover:text-gray-50 transition-colors"
-            >
-              Login
-            </Link>
+           
             <Link 
               href="/login" 
               className="text-xs font-bold bg-primary text-white px-8 py-3 rounded-xl hover:bg-primary-hover transition-all active:scale-95 shadow-lg shadow-primary/20 uppercase"

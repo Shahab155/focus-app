@@ -14,20 +14,22 @@ export function AddAvoidItem() {
   }
 
   return (
-    <form id="add-avoid-form" action={action} className="mt-6 flex gap-4">
-      <input
-        name="name"
-        placeholder="What should you avoid today?"
-        required
-        className="flex-1 min-w-0 h-12 px-6 bg-bg-main border border-border-subtle rounded-xl text-sm text-text-primary placeholder:text-gray-700 focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition-all outline-none font-semibold shadow-inner"
-      />
-      <button
-        type="submit"
-        disabled={isPending}
-        className="h-12 px-8 bg-red-500/10 hover:bg-red-500 text-red-500 hover:text-white rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all disabled:opacity-50 border border-red-500/30 hover:border-red-500 shadow-lg shadow-red-500/5 active:scale-95 shrink-0"
-      >
-        {isPending ? "Adding..." : "Mark Distraction"}
-      </button>
-    </form>
+    <div className="mt-6 flex flex-col gap-3">
+      <form id="add-avoid-form" action={action} className="flex gap-2">
+        <input
+          name="name"
+          placeholder="New distraction to avoid..."
+          required
+          className="flex-1 min-w-0 h-10 px-4 bg-[#1f2937] border border-white/5 rounded-[8px] text-[14px] text-white placeholder:text-[#6b7280] focus:ring-2 focus:ring-[#d97706]/20 focus:border-[#d97706] transition-all outline-none font-medium"
+        />
+        <button
+          type="submit"
+          disabled={isPending}
+          className="h-10 px-4 bg-transparent border border-[#d97706] text-[#d97706] rounded-[8px] text-[12px] font-semibold uppercase tracking-tight transition-all hover:bg-[#d97706]/10 active:scale-95 disabled:opacity-50"
+        >
+          {isPending ? "..." : "Add"}
+        </button>
+      </form>
+    </div>
   );
 }

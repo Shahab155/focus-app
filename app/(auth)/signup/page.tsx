@@ -18,13 +18,13 @@ export default function SignupPage() {
       <Container className="max-w-md w-full relative z-10">
         <div className="p-10 shadow-2xl border border-border-subtle bg-bg-card/40 backdrop-blur-xl rounded-[2.5rem]">
           <div className="text-center mb-10">
-            <h1 className="text-4xl font-bold text-gray-50 tracking-tight mb-4 leading-tight">Create Account</h1>
+            <h1 className="text-[28px] md:text-[36px] font-bold text-text-heading tracking-tight mb-4 leading-tight">Create Account</h1>
             <p className="text-text-secondary font-medium text-base">Start your journey today</p>
           </div>
 
           <form action={formAction} className="space-y-6">
             <div className="space-y-3">
-              <label className="block text-xs uppercase font-bold text-text-secondary ml-1">
+              <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Email Address
               </label>
               <input
@@ -36,7 +36,7 @@ export default function SignupPage() {
               />
             </div>
             <div className="space-y-3">
-              <label className="block text-xs uppercase font-bold text-text-secondary ml-1">
+              <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Password
               </label>
               <input
@@ -48,7 +48,7 @@ export default function SignupPage() {
               />
             </div>
             <div className="space-y-3">
-              <label className="block text-xs uppercase font-bold text-text-secondary ml-1">
+              <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">
                 Confirm Password
               </label>
               <input
@@ -61,15 +61,15 @@ export default function SignupPage() {
             </div>
 
             {state?.error && (
-              <div className="p-4 bg-red-500/10 border border-red-500/20 rounded-2xl">
-                <p className="text-red-400 text-sm font-bold text-center">{state.error}</p>
+              <div className="p-4 bg-warning/10 border border-warning/20 rounded-2xl">
+                <p className="text-warning text-sm font-bold text-center">{state.error}</p>
               </div>
             )}
 
             <button
               type="submit"
               disabled={isPending}
-              className="w-full h-12 bg-primary hover:bg-primary-hover text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98] disabled:opacity-50 mt-4 uppercase text-[10px]"
+              className="w-full h-12 bg-primary hover:bg-primary-hover text-white rounded-xl transition-all shadow-lg shadow-primary/20 active:scale-[0.98] disabled:opacity-50 mt-4 uppercase text-[12px] tracking-[0.08em] font-medium"
             >
               {isPending ? "Creating account..." : "Sign Up"}
             </button>
