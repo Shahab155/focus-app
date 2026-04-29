@@ -3,7 +3,6 @@
 import { useActionState } from "react";
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
-import { Card } from "@/components/ui/Card";
 import { loginWithCredentials, loginWithGoogle } from "@/lib/actions/auth";
 
 export default function LoginPage() {
@@ -13,17 +12,12 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-bg-main py-12 px-4 sm:px-6 lg:px-8">
       {/* Premium ambient background elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-lg h-[600px] opacity-20 blur-[120px] bg-gradient-to-b from-primary to-transparent -z-10 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 opacity-10 blur-[100px] bg-secondary -z-10 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-90 h-90 opacity-10 blur-[100px] bg-secondary -z-10 pointer-events-none" />
 
       <Container className="max-w-md w-full relative z-10">
         <div className="p-10 shadow-2xl border border-border-subtle bg-bg-card/40 backdrop-blur-xl rounded-[2.5rem]">
           <div className="text-center mb-10 relative">
-            <div className="mx-auto w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-8 border border-primary/20 shadow-[0_0_20px_rgba(99,102,241,0.1)]">
-              <svg className="w-10 h-10 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
-              </svg>
-            </div>
-            <h1 className="text-[28px] md:text-[36px] font-bold text-text-heading tracking-tight mb-4 leading-tight">Welcome Back</h1>
+            <h1 className="text-[28px] md:text-[36px] font-bold text-text-heading tracking-tight mb-leading-tight">Welcome Back</h1>
             <p className="text-text-secondary font-medium text-base">Sign in to your account to continue</p>
           </div>
 
@@ -68,7 +62,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          <div className="relative my-12">
+          <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-border-subtle/50"></div>
             </div>
