@@ -100,7 +100,7 @@ export function FeaturesSection() {
               </span>
             </h2>
             <p className="text-[15px] lg:text-[16px] text-[#9ca3af] leading-relaxed mt-3 lg:mb-12 max-w-[420px] font-sans">
-              We built a system that prioritizes clarity over complexity. No clutter, just the features you need to master your day.
+              I built a system that prioritizes clarity over complexity. No clutter, just the features you need to master your day.
             </p>
 
             {/* Vertical Progress Line - Hidden on Mobile */}
