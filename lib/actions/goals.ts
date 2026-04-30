@@ -153,6 +153,7 @@ export async function getWeeklyReport() {
         g.title,
         ROUND(AVG(dp.action_percentage))::int as avg_progress,
         SUM(dp.completed_value)::int as total_completed,
+        (SELECT unit FROM goal_actions WHERE goal_id = g.id LIMIT 1) as unit,
         (
           SELECT json_agg(json_build_object('name', action_name, 'avg_percentage', avg_percentage))
           FROM action_summaries 

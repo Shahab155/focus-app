@@ -13,6 +13,7 @@ interface GoalReportCardProps {
     title: string;
     avg_progress: number;
     total_completed: number;
+    unit: string;
     actions: ActionSummary[];
   };
 }
@@ -43,7 +44,7 @@ export function GoalReportCard({ goal }: GoalReportCardProps) {
             <span className="text-[11px] font-medium tracking-[0.08em] uppercase text-text-secondary block mb-2">Total Impact</span>
             <div className="flex items-baseline gap-2">
               <span className="text-3xl font-bold text-text-primary tracking-tight">{goal.total_completed}</span>
-              <span className="text-xs text-text-secondary font-bold uppercase">units</span>
+              <span className="text-xs text-text-secondary font-bold uppercase">{goal.unit || 'units'}</span>
             </div>
           </div>
           

@@ -18,6 +18,7 @@ interface ActionItemProps {
 export function ActionItem({ action }: ActionItemProps) {
   const [value, setValue] = useState(action.completed_value);
   const [isPending, setIsPending] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [showSlider, setShowSlider] = useState(false);
 
   // Sync state with props when they change (due to revalidation)
@@ -57,7 +58,9 @@ export function ActionItem({ action }: ActionItemProps) {
 
   async function handleDelete() {
     if (confirm("Delete this action?")) {
+        setIsDeleting(true);
         await deleteAction(action.action_id);
+        setIsDeleting(false);
     }
   }
 
@@ -68,14 +71,19 @@ export function ActionItem({ action }: ActionItemProps) {
           {/* Status Circle */}
           <button
             onClick={handleToggle}
-            disabled={isPending}
-            className={`w-5 h-5 rounded-full border-2 transition-all flex items-center justify-center shrink-0 ${
+            disabled={isPending || isDeleting}
+            className={`w-5 h-5 rounded-full border-2 transition-all flex items-center justify-center shrink-0 disabled:opacity-50 ${
               isCompleted 
                 ? "bg-[#10b981] border-[#10b981] text-white" 
                 : "border-[#374151] hover:border-[#6366f1] bg-transparent"
             }`}
           >
-            {isCompleted && (
+            {isPending ? (
+              <svg className="animate-spin w-3 h-3 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            ) : isCompleted && (
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
               </svg>
@@ -105,18 +113,26 @@ export function ActionItem({ action }: ActionItemProps) {
                 className="w-10 text-right bg-transparent text-[13px] font-semibold text-[#10b981] border-none focus:ring-0 p-0 tabular-nums"
               />
               <span className="text-[13px] text-[#6b7280]">
-                / {action.target_value} {action.unit === 'minutes' ? 'min' : 'units'}
+                / {action.target_value} {action.unit === 'minutes' ? 'min' : action.unit === 'questions' ? 'qs' : (action.unit || 'units')}
               </span>
             </div>
           )}
 
           <button 
             onClick={handleDelete}
-            className="lg:opacity-0 group-hover:opacity-100 p-1 text-text-secondary hover:text-warning transition-opacity"
+            disabled={isDeleting || isPending}
+            className="lg:opacity-0 group-hover:opacity-100 p-1 text-text-secondary hover:text-warning transition-opacity disabled:opacity-50"
           >
-            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            {isDeleting ? (
+              <svg className="animate-spin w-3.5 h-3.5 text-current" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            ) : (
+              <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            )}
           </button>
         </div>
       </div>

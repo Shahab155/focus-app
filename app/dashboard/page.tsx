@@ -93,8 +93,8 @@ export default async function DashboardPage() {
                   No distractions listed yet.
                 </div>
               ) : (
-                avoidList.map((item) => (
-                  <AvoidItem key={item.id} item={item as any} />
+                avoidList.map((item, index) => (
+                  <AvoidItem key={item.id} item={item as any} index={index + 1} />
                 ))
               )}
               <AddAvoidItem />
