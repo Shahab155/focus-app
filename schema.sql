@@ -51,12 +51,12 @@ CREATE TABLE IF NOT EXISTS goals (
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Goal Actions Table
 CREATE TABLE IF NOT EXISTS goal_actions (
     id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     goal_id UUID NOT NULL REFERENCES goals(id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     target_value INTEGER, -- Optional: if set, it's a numeric goal; otherwise it's a checkbox
+    unit TEXT DEFAULT 'units', -- 'units' or 'minutes'
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 

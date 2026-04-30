@@ -36,7 +36,7 @@ export function AddActionForm({ goalId }: AddActionFormProps) {
   return (
     <form action={action} className="mt-8 p-8 bg-bg-card border border-border-subtle rounded-[2.5rem] space-y-6 shadow-2xl relative overflow-hidden group">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
-      
+
       <div className="space-y-3 relative z-10">
         <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">New Action / Habit</label>
         <input
@@ -47,14 +47,26 @@ export function AddActionForm({ goalId }: AddActionFormProps) {
           className="w-full h-12 px-6 bg-bg-main border border-border-subtle rounded-xl text-sm text-text-primary placeholder:text-gray-700 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-semibold shadow-inner"
         />
       </div>
-      <div className="space-y-3 relative z-10">
-        <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">Daily Target (Units)</label>
-        <input
-          name="targetValue"
-          type="number"
-          placeholder="e.g. 1"
-          className="w-full h-12 px-6 bg-bg-main border border-border-subtle rounded-xl text-sm text-text-primary placeholder:text-gray-700 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-semibold shadow-inner"
-        />
+      <div className="grid grid-cols-2 gap-6 relative z-10">
+        <div className="space-y-3">
+          <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">Target</label>
+          <input
+            name="targetValue"
+            type="number"
+            placeholder="e.g. 1"
+            className="w-full h-12 px-6 bg-bg-main border border-border-subtle rounded-xl text-sm text-text-primary placeholder:text-gray-700 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-semibold shadow-inner"
+          />
+        </div>
+        <div className="space-y-3">
+          <label className="block text-[12px] font-medium tracking-[0.08em] uppercase text-text-secondary ml-1">Type</label>
+          <select
+            name="unit"
+            className="w-full h-12 px-6 bg-bg-main border border-border-subtle rounded-xl text-sm text-text-primary focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all outline-none font-semibold shadow-inner appearance-none cursor-pointer"
+          >
+            <option value="units">Units</option>
+            <option value="minutes">Minutes</option>
+          </select>
+        </div>
       </div>
       <div className="flex justify-end gap-4 pt-2 relative z-10">
         <button

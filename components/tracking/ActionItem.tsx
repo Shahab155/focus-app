@@ -8,6 +8,7 @@ interface ActionItemProps {
     action_id: string;
     name: string;
     target_value: number | null;
+    unit: string | null;
     completed_value: number;
     percentage: number;
     streak: number;
@@ -103,7 +104,9 @@ export function ActionItem({ action }: ActionItemProps) {
                 onBlur={() => handleUpdate(value)}
                 className="w-10 text-right bg-transparent text-[13px] font-semibold text-[#10b981] border-none focus:ring-0 p-0 tabular-nums"
               />
-              <span className="text-[13px] text-[#6b7280]">/ {action.target_value}</span>
+              <span className="text-[13px] text-[#6b7280]">
+                / {action.target_value} {action.unit === 'minutes' ? 'min' : 'units'}
+              </span>
             </div>
           )}
 

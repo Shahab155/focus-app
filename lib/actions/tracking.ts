@@ -9,6 +9,7 @@ export async function createGoalAction(goalId: string, formData: FormData) {
   if (!session?.user?.id) throw new Error("Unauthorized");
 
   const name = formData.get("name") as string;
+  const unit = formData.get("unit") as string || "units";
   const targetValue = formData.get("targetValue") 
     ? parseInt(formData.get("targetValue") as string) 
     : null;
@@ -21,8 +22,8 @@ export async function createGoalAction(goalId: string, formData: FormData) {
     if (goals.length === 0) return { error: "Goal not found or unauthorized" };
 
     await sql`
-      INSERT INTO goal_actions (goal_id, name, target_value)
-      VALUES (${goalId}, ${name}, ${targetValue})
+      INSERT INTO goal_actions (goal_id, name, target_value, unit)
+      VALUES (${goalId}, ${name}, ${targetValue}, ${unit})
     `;
 
     revalidatePath("/dashboard");
@@ -134,6 +135,7 @@ export async function getTodayProgress() {
         ga.goal_id,
         ga.name,
         ga.target_value,
+        ga.unit,
         COALESCE(al.completed_value, 0) as completed_value,
         CASE 
           WHEN ga.target_value IS NOT NULL AND ga.target_value > 0 

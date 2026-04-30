@@ -70,7 +70,7 @@ export function AddGoalForm({ disabled }: AddGoalFormProps) {
             rows={3}
           />
         </div>
-        
+
         {error && (
           <div className="p-3 bg-warning/10 border border-warning/20 rounded-xl">
             <p className="text-warning text-xs font-bold text-center">{error}</p>
