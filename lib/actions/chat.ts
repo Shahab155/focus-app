@@ -13,7 +13,7 @@ export async function sendMessageToAgent(message: string) {
   const userId = (session.user as any).id;
 
   try {
-    const response = await fetch("http://localhost:8000/chat", {
+    const response = await fetch("/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
