@@ -13,7 +13,7 @@ export async function sendMessageToAgent(message: string) {
   const userId = (session.user as any).id;
 
   try {
-    const response = await fetch("/chat", {
+    const response = await fetch("https://focus-ai-agent-production.up.railway.app/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
