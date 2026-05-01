@@ -1,6 +1,7 @@
 import { Sidebar } from "@/components/ui/Sidebar";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
+import ChatAssistant from "@/components/chat/ChatAssistant";
 
 export default async function DashboardLayout({
   children,
@@ -19,6 +20,7 @@ export default async function DashboardLayout({
       <main className="flex-1 overflow-x-hidden p-4 md:p-8 lg:p-10">
         {children}
       </main>
+      <ChatAssistant />
     </div>
   );
 }
