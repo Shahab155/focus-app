@@ -11,6 +11,7 @@ import { AvoidItem } from '@/components/avoid/AvoidItem';
 import { AddAvoidItem } from '@/components/avoid/AddAvoidItem';
 import { ActionItem } from '@/components/tracking/ActionItem';
 import { DailySummary } from '@/components/tracking/DailySummary';
+import { Bot } from 'lucide-react';
 import Link from 'next/link';
 
 export default async function DashboardPage() {
@@ -29,13 +30,24 @@ export default async function DashboardPage() {
 
   return (
     <div className="relative">
-      <header className="mb-6 md:mb-10 flex flex-col gap-1 relative z-10">
-        <h1 className="text-[28px] md:text-[36px] font-extrabold tracking-tight text-white font-heading leading-tight">
-          Hello, {session?.user?.name || session?.user?.email?.split('@')[0] || 'User'}
-        </h1>
-        <p className="text-[10px] md:text-[12px] font-medium tracking-[0.1em] uppercase text-[#6b7280] font-sans">
-          {currentDate}
-        </p>
+      <header className="mb-6 md:mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-[28px] md:text-[36px] font-extrabold tracking-tight text-white font-heading leading-tight">
+            Hello, {session?.user?.name || session?.user?.email?.split('@')[0] || 'User'}
+          </h1>
+          <p className="text-[10px] md:text-[12px] font-medium tracking-[0.1em] uppercase text-[#6b7280] font-sans">
+            {currentDate}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3 px-4 py-2.5 bg-indigo-500/10 border border-indigo-500/20 rounded-xl group hover:bg-indigo-500/15 transition-all cursor-default">
+          <div className="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+            <Bot className="w-4 h-4 text-indigo-400" />
+          </div>
+          <p className="text-[11px] text-indigo-200/80 leading-snug">
+            AI Agent is active! Try <span className="text-white font-medium italic">"Write a journal entry about my wins today"</span>
+          </p>
+        </div>
       </header>
 
       <div className="relative z-10 mb-10">

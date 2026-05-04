@@ -24,6 +24,10 @@ export function HeroSection() {
           {/* Left Side: Content */}
           <div className="flex flex-col items-start text-left">
             <div className="relative mb-6">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6 group cursor-default">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <span className="text-xs font-bold text-primary uppercase tracking-wider">AI Powered Focus System</span>
+              </div>
               <h1 className="text-[48px] md:text-[72px] font-extrabold tracking-tight text-white leading-[1.1] relative z-10 font-heading">
                 Focus on <br />
                 <span className="relative inline-block">
@@ -37,7 +41,10 @@ export function HeroSection() {
             </div>
 
             <p className="text-[18px] text-[#9ca3af] mb-10 max-w-[480px] leading-[1.6] font-normal font-sans">
-              Track your top priorities, eliminate distractions, and improve daily. The ultimate productivity system for high performers.
+              Track your top priorities, eliminate distractions, and improve daily. Now with an <span className="relative inline-block px-2 ">
+                <span className="relative z-10 text-white font-bold">AI Agent</span>
+                
+              </span> to help you manage your journey effortlessly.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center gap-5 w-full sm:w-auto">

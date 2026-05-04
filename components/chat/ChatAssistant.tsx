@@ -21,7 +21,7 @@ export default function ChatAssistant() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content: "Hi! I'm your Focus App Assistant. How can I help you with your goals today?",
+      content: "Hi! I'm your AI Focus Agent. I can help you manage goals, write journal entries, and update your avoid list using natural language. How can I help you today?",
     },
   ]);
   const [input, setInput] = useState("");

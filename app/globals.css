@@ -276,3 +276,16 @@ input[type="button"] {
 .animate-checkmark {
   animation: checkmark-pop 0.4s ease-out forwards;
 }
+
+@keyframes draw-circle {
+  0% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw-circle {
+  animation: draw-circle 1.2s ease-out forwards;
+}
